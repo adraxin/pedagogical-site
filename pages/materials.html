@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Методические материалы — Педагогический Ресурс</title>
-  <link rel="stylesheet" href="../css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Методические материалы — Педагогический Ресурс</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <header>
-  <div class="container">
+  <div class="container header-container">
     <div class="logo">📚 Педагогический Ресурс</div>
     <nav>
       <a href="../index.html">Главная</a>
@@ -17,31 +17,32 @@
       <a href="news.html">Новости</a>
       <a href="contacts.html">Контакты</a>
     </nav>
+    <button class="btn-login">Войти</button>
   </div>
 </header>
 
 <section class="page-content">
   <div class="container">
     <h1>Методические материалы</h1>
-    <p>Здесь собраны полезные методические разработки, конспекты уроков и тесты для разных предметов и классов.</p>
+    <p>Полезные методические разработки, конспекты уроков и тесты для разных предметов и классов.</p>
 
     <div class="cards">
-      <div class="card">
+      <div class="card" data-category="math">
         <img src="../images/lesson1.jpg" alt="Урок">
         <h3>План-конспект по математике</h3>
-        <p>Тема: Деление дробей (6 класс)</p>
+        <p>Деление дробей (6 класс)</p>
         <button>Скачать</button>
       </div>
-      <div class="card">
+      <div class="card" data-category="geo">
         <img src="../images/lesson2.jpg" alt="Урок">
         <h3>Презентация по географии</h3>
-        <p>Тема: Природные зоны России (7 класс)</p>
+        <p>Природные зоны России (7 класс)</p>
         <button>Скачать</button>
       </div>
-      <div class="card">
+      <div class="card" data-category="hist">
         <img src="../images/lesson3.jpg" alt="Урок">
         <h3>Тест по истории</h3>
-        <p>Тема: Великая Отечественная война</p>
+        <p>Великая Отечественная война</p>
         <button>Скачать</button>
       </div>
     </div>

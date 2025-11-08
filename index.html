@@ -1,69 +1,115 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Педагогический Ресурс</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Педагогический Ресурс</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Шапка сайта -->
-    <header>
-        <div class="container">
-            <div class="logo">📚 Педагогический Ресурс</div>
-            <nav>
-                <a href="pages/materials.html">Материалы</a>
-                <a href="pages/courses.html">Курсы</a>
-                <a href="pages/news.html">Новости</a>
-                <a href="pages/contacts.html">Контакты</a>
-            </nav>
-            <button class="btn-login">Войти</button>
-        </div>
-    </header>
 
-    <!-- Баннер -->
-    <section class="hero">
-        <div class="container">
-            <h1>Добро пожаловать на педагогический портал!</h1>
-            <p>Методические материалы, курсы повышения квалификации и актуальные новости образования</p>
-            <button class="btn-primary">Начать изучение</button>
-        </div>
-    </section>
+  <!-- Шапка сайта -->
+  <header>
+    <div class="container">
+      <div class="logo">📚 Педагогический Ресурс</div>
+      <nav>
+        <a href="index.html" class="active">Главная</a>
+        <a href="pages/materials.html">Материалы</a>
+        <a href="pages/courses.html">Курсы</a>
+        <a href="pages/news.html">Новости</a>
+        <a href="pages/contacts.html">Контакты</a>
+      </nav>
+      <button class="btn-login">Войти</button>
+    </div>
+  </header>
 
-    <!-- Популярные материалы -->
-    <section id="materials" class="materials">
-        <div class="container">
-            <h2>Популярные материалы</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="images/lesson1.jpg" alt="Урок">
-                    <h3>Конспект урока по математике</h3>
-                    <p>5 класс, алгебра</p>
-                    <button>Скачать</button>
-                </div>
-                <div class="card">
-                    <img src="images/lesson2.jpg" alt="Урок">
-                    <h3>Презентация по биологии</h3>
-                    <p>7 класс, клеточное строение</p>
-                    <button>Скачать</button>
-                </div>
-                <div class="card">
-                    <img src="images/lesson3.jpg" alt="Урок">
-                    <h3>Тесты по русскому языку</h3>
-                    <p>9 класс, подготовка к ОГЭ</p>
-                    <button>Скачать</button>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Баннер -->
+  <section class="hero">
+    <div class="container">
+      <h1>Добро пожаловать на педагогический портал!</h1>
+      <p>Методические материалы, курсы повышения квалификации и актуальные новости образования</p>
+      <button class="btn-primary">Начать изучение</button>
+    </div>
+  </section>
 
-    <!-- Футер -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Педагогический Ресурс. Все права защищены.</p>
-        </div>
-    </footer>
+  <!-- Панель поиска и фильтра -->
+  <section class="toolbar">
+    <div class="container">
+      <input type="text" id="searchInput" placeholder="Поиск по материалам...">
+      <div class="filters">
+        <button class="filter-btn active" data-category="all">Все</button>
+        <button class="filter-btn" data-category="math">Математика</button>
+        <button class="filter-btn" data-category="bio">Биология</button>
+        <button class="filter-btn" data-category="rus">Русский язык</button>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/script.js"></script>
+  <!-- Популярные материалы -->
+  <section id="materials" class="materials">
+    <div class="container">
+      <h2>Популярные материалы</h2>
+      <div class="cards">
+        <div class="card" data-category="math">
+          <img src="images/lesson1.jpg" alt="Урок">
+          <h3>Конспект урока по математике</h3>
+          <p>5 класс, алгебра</p>
+          <button>Скачать</button>
+        </div>
+        <div class="card" data-category="bio">
+          <img src="images/lesson2.jpg" alt="Урок">
+          <h3>Презентация по биологии</h3>
+          <p>7 класс, клеточное строение</p>
+          <button>Скачать</button>
+        </div>
+        <div class="card" data-category="rus">
+          <img src="images/lesson3.jpg" alt="Урок">
+          <h3>Тесты по русскому языку</h3>
+          <p>9 класс, подготовка к ОГЭ</p>
+          <button>Скачать</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Педагогический Ресурс. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Переключатель темы -->
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+
+  <!-- Модальное окно входа -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Вход</h2>
+      <form id="loginForm">
+        <input type="text" placeholder="Логин" required>
+        <input type="password" placeholder="Пароль" required>
+        <button type="submit">Войти</button>
+      </form>
+      <p>Нет аккаунта? <a href="#" id="showRegister">Зарегистрироваться</a></p>
+    </div>
+  </div>
+
+  <!-- Модальное окно регистрации -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Регистрация</h2>
+      <form id="registerForm">
+        <input type="text" placeholder="Имя" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Пароль" required>
+        <button type="submit">Зарегистрироваться</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
